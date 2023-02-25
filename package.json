@@ -3,9 +3,8 @@
   "version": "0.1.0",
   "main": "shadowfy.js",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "@babel/core": "^7.21.0",
-    "@babel/preset-react": "^7.18.6",
-    "nodemon": "^2.0.20"
+    "@babel/preset-react": "^7.18.6"
   }
 }
