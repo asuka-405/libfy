@@ -25,6 +25,16 @@ const register_comp = (file_string, comp_name)=>{
 }
 
 const shadowfy = (root_path, root_name)=>{
+
+    if(babel == undefined){
+        console.error("@babel/core not found!!")
+        return
+    }
+    else if(require("@babel/preset-react") == undefined){
+        console.error("@babel/preset-react not found!!")
+        return
+    }
+
     let sf_queue = [
         {
             in_path: root_path,
