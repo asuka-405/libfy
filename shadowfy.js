@@ -61,7 +61,4 @@ const shadowfy = (root_path, root_name)=>{
 
 }
 
- module.exports = {
-    shadowfy, 
-    babel_proc
- }
+ module.exports = shadowfy
