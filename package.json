@@ -1,7 +1,7 @@
 {
-  "name": "shadowfy_main",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "shadowfy",
+  "version": "0.1.0",
+  "main": "shadowfy.js",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.21.0",
