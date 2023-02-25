@@ -1,0 +1,1 @@
+require("./shadowfy.js").shadowfy("./root", "root_new")
