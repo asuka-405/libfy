@@ -1,8 +1,9 @@
-const { compiler } = require("./compiler")
+const babel = require('@babel/core')
+const Compiler = require("./compiler.js")
 
-class compiler_jsx extends compiler {
+class Compiler_JSX extends Compiler {
   compile_proc(file_string) {
-    return this.register_comp(this.babel_proc(file_string))
+    return this.babel_proc(file_string)
   }
 
   babel_proc(file_string) {
@@ -11,23 +12,14 @@ class compiler_jsx extends compiler {
       presets: ["@babel/preset-react"],
     }).code
   }
-
-  register_comp(file_string, comp_name) {
-    file_string = delete_comments(file_string)
-    const comp_class = require("./templates.js").only_connected.replace(
-      /component_name/g,
-      comp_name
-    )
-    return file_string + "\n" + comp_class
-  }
-  delete_comments(file_string){
-    return file_string
-      .replace(/\/\*.+?\*\/.*(?=[\n\r])/g, "")
-      .split(/\r?\n/)
-      .filter((line) => line.trim() !== "")
-      .join("\n")
-    // .replace(/\/\*.+?\*\/|\/\/.*(?=[\n\r])/g, "")
-  }
+  // delete_comments(file_string){
+  //   return file_string
+  //     .replace(/\/\*.+?\*\/.*(?=[\n\r])/g, "")
+  //     .split(/\r?\n/)
+  //     .filter((line) => line.trim() !== "")
+  //     .join("\n")
+  //   // .replace(/\/\*.+?\*\/|\/\/.*(?=[\n\r])/g, "")
+  // }
 }
 
-const c = new compiler_jsx('../src', '../out')
+module.exports = Compiler_JSX
