@@ -1,6 +1,6 @@
 {
-  "name": "shadowfy",
-  "version": "0.1.0",
+  "name": "@asuka-405/shadowfy",
+  "version": "0.1.5",
   "main": "shadowfy.js",
   "license": "MIT",
   "peerDependencies": {
