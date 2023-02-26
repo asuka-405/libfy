@@ -29,7 +29,7 @@
 <!-- Status -->
 
 <h4 align="center"> 
-	🚧  @asuka 405&#x2F;shadowfy 🚀 Under construction...  🚧
+	🚧  @asuka&minus;405&#x2F;shadowfy 🚀 Under construction...  🚧
 </h4> 
 <br>
 <hr>
@@ -48,12 +48,12 @@
 
 ## 🎯 About
 
-This module lets you convert your existing or new react components ( jsx ) into web components architecture.
+Write your HTML or JSX in a seperate file and use Shadowfy to convert them into basic web components
 
 ## ✨ Features
 
 ✅ JSX to Web Component\
-✅ Isolated HTML to Web Component in next version
+✅ HTML containers into their seperate light DOM component
 
 ## 🚀 Technologies
 
@@ -83,13 +83,14 @@ $ yarn add @babel/core @babel/preset-react --dev
 ```
 ## 🧪 Sample execution
 
-- Create a source dir that might have multiple jsx components or dirs that contain them
+- Create a source dir that might have multiple jsx components or HTML files
+- Directories can be nested in source dir but one source dir must have either HTML or JSX files
 
 - In a script file, import shadowfy component and pass it the path to src dir and name of destination dir, say root_new
 
 - run the script
 ``` bash
-$ node inde.js
+$ node shadowfy.js
 ```
 
 - It'll create a new dir - root_new and the converted files will be in there
