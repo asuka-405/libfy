@@ -1,6 +1,6 @@
 const fs = require("fs")
 
-class compiler {
+export class compiler {
   constructor({ src_dir, out_dir }) {
     this.src = src_dir
     this.out = out_dir
@@ -50,10 +50,3 @@ class compiler {
     fs.writeFileSync(`${this.queue[0].out}/${item.name}`, cur_file) //==============
   }
 }
-
-const comp = new compiler({
-    src_dir:"./srcc",
-    out_dir: "./outt",
-})
-
-comp.convert()
