@@ -2,18 +2,14 @@
   "name": "@asuka-405/shadowfy",
   "description": "This module lets you convert your existing or new react components ( jsx ) into web components architecture.",
   "author": {
-    "name":"Suryansh Kapil",
+    "name": "Suryansh Kapil",
     "email": "suryanshkapil405@gmail.com",
-    "url":"https://github.com/asuka-405"
-    },
+    "url": "https://github.com/asuka-405"
+  },
   "homepage": "https://github.com/asuka-405/shadowfy/#readme",
   "version": "0.2.1",
   "main": "shadowfy.js",
   "license": "MIT",
-  "peerDependencies": {
-    "@babel/core": "^7.21.0",
-    "@babel/preset-react": "^7.18.6"
-  },
   "devDependencies": {
     "@babel/core": "^7.21.0",
     "@babel/preset-react": "^7.18.6"
