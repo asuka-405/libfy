@@ -7,7 +7,7 @@
     "url":"https://github.com/asuka-405"
     },
   "homepage": "https://github.com/asuka-405/shadowfy/#readme",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "shadowfy.js",
   "license": "MIT",
   "peerDependencies": {
