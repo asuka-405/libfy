@@ -1,12 +1,15 @@
 class Router {
-    constructor(routes){
+    constructor(){
         this.ROUTES = {
-            "/": "/index.html",
-            ...routes
+            "/": "/index.html"
         }
-        this.re_route()
-        window.onpopstate = this.re_route
-        
+        this.NOTFOUND = "/404.html"
+        this.#re_route()
+        window.onpopstate = this.#re_route.bind(this)
+    }
+
+    addRoute(route, path){
+        this.ROUTES[route] = path
     }
 
     router_main(event){
@@ -14,14 +17,15 @@ class Router {
         event = event || window.event
         event.preventDefault()
         event.stopPropagation()
+        console.log(event.target.href);
         window.history.pushState({}, '', event.target.href)
-        this.re_route()
+        this.#re_route()
         
     }
 
-    async re_route(){
+    async #re_route(){
         const PATH = window.location.pathname
-        const ROUTE = this.ROUTES[PATH] || this.ROUTES[404]
+        const ROUTE = this.ROUTES[PATH] || this.NOTFOUND
         const CONTENT = await fetch(ROUTE).then(data=>data.text())
         this.#re_route_content(CONTENT)
     }
@@ -35,4 +39,15 @@ class Router {
     }
 }
 
-const r = new Router(routes)
+const r = new Router()
+
+r.addRoute("/", "/index.html")
+
+r.addRoute("/1", "/1.html")
+
+r.addRoute("/2", "/2.html")
+
+r.addRoute("/404", "/404.html")
+
+
+
