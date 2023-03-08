@@ -8,7 +8,7 @@
   },
   "homepage": "https://github.com/asuka-405/shadowfy/#readme",
   "keywords": ["Web Components", "Light DOM", "JavaScript", "Node", "Babel", "JSX"],
-  "version": "0.2.2",
+  "version": "0.2.9",
   "main": "shadowfy.js",
   "license": "MIT",
   "devDependencies": {

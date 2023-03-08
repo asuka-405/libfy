@@ -29,7 +29,7 @@
 <!-- Status -->
 
 <h4 align="center"> 
-	🚧  @asuka&minus;405&#x2F;shadowfy 🚀 Under construction...  🚧
+	🚧  @asuka&minus;405&#x2F;shadowfy 🚀 Under construction...  🚧 </br>
 </h4> 
 <br>
 <hr>
@@ -48,7 +48,9 @@
 
 ## 🎯 About
 
-Write your HTML or JSX in a seperate file and use Shadowfy to convert them into basic web components
+Write your HTML or JSX in a seperate file and use Shadowfy to convert them into basic web components </br>
+This node module does not work 💀 </br>
+We'll be publishing Shadowfy <a>v0.3</a>, beta version of Web component based web framework.💕
 
 ## ✨ Features
 
@@ -68,32 +70,66 @@ The following tools were used in this project:
 ## ☑️ Requirements
 
 Before starting ✅, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
-
-## 🏁 Setup
-
-```bash
-# Clone this project
-$ git clone https://github.com/asuka-405/shadowfy
-
-# Access
-$ cd shadowfy
-
-# Install dependencies
-$ yarn add @babel/core @babel/preset-react --dev
-```
 ## 🧪 Sample execution
 
-- Create a source dir that might have multiple jsx components or HTML files
-- Directories can be nested in source dir but one source dir must have either HTML or JSX files
-
-- In a script file, import shadowfy component and pass it the path to src dir and name of destination dir, say root_new
-
+- Clone the repo from <a href="https://github.com/asuka-405/shadowfy">github</a>
+- Pass the following arguments
+  - src_dir : path to source directory
+  - out_dir : path to compiled directory
+  - Pass these arguments in the shadowfy or compiler function as an object
+```
+  Shadowfy({
+      src_dir: "./path/to/src/dir",
+      out_dir: './path/to/out/dir'
+  })
+```
 - run the script
 ``` bash
+# Install dependencies
+$ yarn add @babel/core @babel/preset-react --dev
+
+# run the script
 $ node shadowfy.js
 ```
+ - This will generate the compiled code to the given path.
 
-- It'll create a new dir - root_new and the converted files will be in there
+## ⚙️ Tweak the code
+Here's the structure of project so tha you can go and tweak the code:
+```
+shadowfy
+├─ compilers
+│  ├─ compiler.js
+│  ├─ CompilerI.js
+│  └─ templates.js
+├─ ghost.png
+├─ LICENSE
+├─ package-lock.json
+├─ package.json
+├─ README.md
+├─ router
+│  └─ router.js
+└─ shadowfy.js
+
+```
+- The compiler takes the BFS approach
+  - It reads files and dirs in first layer i.e "./src/"
+  - if a directory comes, it pushes the path in queue, else it compiles the file
+```
+CompilerI.js
+├─ src
+├─ out
+├─ queue -> contains list of directories to compile next
+│  ├─ src -> src_dir
+│  ├─ out -> out_dir
+│  └─ out_name -> name of out dir extracted from out_dir
+├─ convert() -> initiate compilation
+├─ dir_proc() -> create and push new queue item
+├─ file_proc() -> read & compile a file
+├─ register_proc() -> register a file as a web component
+├─ compile_proc() -> implemented by children classes
+├─ getName() -> extract dir name from path
+
+```
 
 ## 📝 License
 
